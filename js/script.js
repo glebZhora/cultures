@@ -1,118 +1,73 @@
 "use strict";
 
-// let contries = document.querySelectorAll(".block__list_li");
-// let blockList = document.querySelectorAll(".blcok__list");
-
-// let pic = document.querySelector(".pic");
-
-// let body = document.querySelector("body");
-
-// contries.forEach((item, i) => {
-//   item.addEventListener("mouseover", (e) => {
-//     e.preventDefault();
-//     console.log(item);
-//   });
-
-//   item.addEventListener("mouseout", () => {
-//     let el = createBlock();
-//     document.querySelector("");
-//   });
-// });
-
-// function createBlock() {
-//   let modalWindow = document.createElement("div");
-//   modalWindow.innerHTML = "WindowModal";
-//   modalWindow.style.cssText =
-//     "width: 150px; height: 50px; color: #000; bacground: red; position: absolute; top: -45px; right: -153px; border: #000 solid 2px; padding: 15px; text-align: center; border-radius: 8px 8px 8px 0px; font-weight: bold; opacity: .7";
-//   //   modalWindow.style.color = "red";
-//   return modalWindow;
-// }
-
 const blackBlock = document.querySelector(".block__black");
 const block__countries = document.querySelector(".block__countries");
 const countries = document.querySelectorAll(".block__country");
 
+const religions = document.querySelectorAll(".religions__religion");
+
 function createBlock(index) {
   let modalWindow = document.createElement("div");
 
-  if (index === 1) {
+  if (index === 0) {
+    // Germany
+    modalWindow.innerHTML = `Christianity.`;
+    modalWindow.style.cssText = "top: 330px; left: 830px; z-index: 20;";
+  } else if (index === 1) {
+    // Poland
+    modalWindow.innerHTML = `Christianity. Stream Catholicism`;
     modalWindow.style.cssText = "top: 320px; left: 1030px; z-index: 20;";
   } else if (index === 2) {
-    modalWindow.innerHTML = "Catholicism";
+    // Francy
+    modalWindow.innerHTML = `Christianity. Catholicism 47%`;
     modalWindow.style.cssText = "top: 490px; left: 680px; z-index: 20;";
   } else if (index === 3) {
+    // Spain
+    modalWindow.innerHTML = "Christianity. Catholicism 55%";
     modalWindow.style.cssText = "top: 680px; left: 530px; z-index: 20;";
   } else if (index === 4) {
     modalWindow.innerHTML = "Catholicism";
     modalWindow.style.cssText = "top: 620px; left: 830px; z-index: 20;";
   } else if (index === 5) {
-    modalWindow.innerHTML = "Christian";
+    // England
+    modalWindow.innerHTML = "Christianity";
     modalWindow.style.cssText = "top: 200px; left: 550px; z-index: 20;";
   } else if (index === 6) {
+    //czech republic
+    modalWindow.innerHTML = "48% held none";
     modalWindow.style.cssText = "top: 450px; left: 950px; z-index: 20;";
   } else if (index === 7) {
+    // austria
+    modalWindow.innerHTML = "Christianity. Catholic 57%";
     modalWindow.style.cssText = "top: 500px; left: 920px; z-index: 20;";
   } else if (index === 8) {
+    // switzerland
+    modalWindow.innerHTML = "Christianity. Catholic 34.4%";
     modalWindow.style.cssText = "top: 540px; left: 770px; z-index: 20;";
   } else if (index === 9) {
+    // ukraine
+    modalWindow.innerHTML = "Christianity. Christian Orthodox";
     modalWindow.style.cssText = "top: 380px; left: 1290px; z-index: 20;";
   } else if (index === 10) {
+    modalWindow.innerHTML = "Christianity. Christian Orthodox 88%";
     modalWindow.style.cssText = "top: 475px; left: 1200px; z-index: 20;";
   }
 
-  // switch (index) {
-  //   case index === 1:
-  //     modalWindow.style.cssText = "top: 380px; left: 1000px; z-index: 20;";
-  //     break;
-  //   case index === 2:
-  //     modalWindow.style.cssText = "top: 490px; left: 680px; z-index: 20;";
-  //     break;
-  //   case index === 3:
-  //     modalWindow.style.cssText = "top: 680px; left: 530px; z-index: 20;";
-  //     break;
-  //   case index === 4:
-  //     modalWindow.style.cssText = "top: 620px; left: 830px; z-index: 20;";
-  //     break;
-  //   case index === 5:
-  //     // modalWindow.style.cssText = "top: 490px; left: 680px; z-index: 20;";
-  //     break;
-  // }
-
-  // countries.forEach((i, ind) => {
-  //   if (ind === index) {
-  //     i.style.cssText = "border: #000 solid 2px;";
-  //   }
-  // });
-  // modalWindow.style.cssText =
-  //   "width: 150px; height: 50px; color: #000; background-color: red; position: absolute; top: -45px; right: -153px; border: #000 solid 2px; padding: 15px; text-align: center; border-radius: 8px 8px 8px 0px; font-weight: bold; opacity: .7; z-index: 10;";
   modalWindow.classList.add("styleDiv");
   return modalWindow;
 }
-// let newBLock = createBlock();
-// console.log(newBLock);
-
-// let modalWindow = document.createElement("div");
-// modalWindow.innerHTML = "WindowModal";
-// // modalWindow.style.cssText =
-// //   "width: 150px; height: 50px; color: #000; background-color: red; position: absolute; top: -45px; right: -153px; border: #000 solid 2px; padding: 15px; text-align: center; border-radius: 8px 8px 8px 0px; font-weight: bold; opacity: .7; z-index: 10;";
-// modalWindow.style.cssText = "color: red;";
 
 countries.forEach((item, index) => {
   // console.log(item);
   item.addEventListener("mouseover", () => {
     countries[index].insertAdjacentElement("beforebegin", createBlock(index));
     let exeptInd = index;
-    // blackBlock.style.cssText = "display: block; opacity: 0.5;";
-    // item.style.cssText = "position: relative; z-index: 30;";
+
     countries.forEach((j, ind) => {
       if (ind !== exeptInd) {
         j.style.cssText = "opacity: 0.3; transition: opacity 500ms;";
       }
     });
-    // document.querySelector("body").style.cssText =
-    //   "opacity: 0.3; position: relative;";
-    // block__countries.style.cssText =
-    //   "position: relative; opacity: 0.2; z-index: 1;";
   });
 });
 
@@ -120,6 +75,8 @@ countries.forEach((item, index) => {
   item.addEventListener("mouseout", () => {
     document.querySelector(".styleDiv").remove();
     let exeptInd = index;
+    // item.classList.remove("countryOpacity");
+
     countries.forEach((j, ind) => {
       if (ind !== exeptInd) {
         j.style.cssText = "opacity: 1;";
@@ -127,3 +84,15 @@ countries.forEach((item, index) => {
     });
   });
 });
+
+// religions.forEach((item, index) => {
+//   item.addEventListener("mouseover", () => {
+//     let informationReligion = document.createElement("div");
+//     informationReligion.style.cssText =
+//       "display: flex; flex-direction: column; z-index: 25; width: 260px; min-height: 100px; align-items: center; position: absolute; top: -50px; left: 170px; border-radius: 20px; border: 2px solid #fff; padding: 20px; background: #222d2d;";
+//     informationReligion.innerHTML =
+//       "<div>Title</div><div>God</div><div>Amount of people</div>";
+
+//     item.insertAdjacentElement("afterbegin", informationReligion);
+//   });
+// });
