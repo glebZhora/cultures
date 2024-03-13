@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-w: hidden;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+}
+.block__countries {
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom right, #051d29, #1c4b58);
+  transition: opacity 500ms;
+}
+.block__countries:target {
+  visibility: visible;
+  opacity: 1;
+}
+.block__country {
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.5s;
+}
+
+.germany {
+  position: absolute;
+  top: 360px;
+  z-index: 1;
+  left: 700px;
+}
+
+.poland {
+  position: absolute;
+  top: 354px;
+  left: 860px;
+  z-index: 1;
+}
+
+.france {
+  position: absolute;
+  top: 474px;
+  left: 463px;
+  z-index: 1;
+}
+
+.spain {
+  position: absolute;
+  top: 669px;
+  left: 317px;
+}
+
+.italy {
+  position: absolute;
+  top: 612px;
+  left: 709px;
+}
+
+.united-kingdom {
+  position: absolute;
+  top: 200px;
+  left: 435px;
+}
+
+.czech-republic {
+  position: absolute;
+  top: 482px;
+  left: 830px;
+}
+
+.austria {
+  position: absolute;
+  top: 547px;
+  left: 772px;
+}
+
+.switzerland {
+  position: absolute;
+  top: 592px;
+  left: 694px;
+}
+
+.ukraine {
+  position: absolute;
+  top: 363px;
+  left: 1038px;
+}
+
+.moldova {
+  position: absolute;
+  top: 523px;
+  left: 1142.8px;
+}
+
+.styleDiv {
+  animation: appear 400ms ease-in 1;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #000;
+  font-weight: 600;
+  position: absolute;
+  z-index: 20;
+  background: linear-gradient(to bottom right, #ffffff, #00d5ff);
+  top: 380px;
+  left: 860px;
+  width: 220px;
+  height: 80px;
+  border: #000 solid 2px;
+  border-radius: 6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 8px 8px hsla(0, 0%, 0%, 0.7);
+  justify-content: center;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+}
+.styleDiv:hover {
+  background-color: rgb(255, 94, 0);
+  box-shadow: 0 10px 0 #0c6c8f;
+}
+
+@keyframes styleDiv {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
